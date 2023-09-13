@@ -1,0 +1,44 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+    Edit Course | 
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                    <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Show Course Registration Student</h3>
+                    </div>
+                    <form action="{% url 'course_reg_update' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-check">                    
+                          <label class="form-check-label" for="flexRadioDefault1">
+                          <input class="form-check-input" type="radio" value="1" name="radio" id="flexRadioDefault1">
+                            YES
+                          </label>
+                        </div>
+                        <div class="form-check"> 
+                          <label class="form-check-label" for="flexRadioDefault2"> 
+                          <input class="form-check-input" type="radio" value="0" name="radio" id="flexRadioDefault2" checked>
+                            NO
+                          </label>
+                        </div>
+                        <button class="btn btn-warning" >Go..</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  {% endblock main_content %}
